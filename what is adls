@@ -1,0 +1,65 @@
+1.What is a Data Lake?
+In our healthcare platform, we use Azure Data Lake Storage Gen2 as our centralized data lake. A data lake is a scalable repository that can store structured, semi-structured, and unstructured data in its native format. We ingest data from multiple source systems such as EHR, claims, pharmacy, and laboratory systems into the raw layer without enforcing a schema upfront. This allows us to retain the complete source data for auditing, reprocessing, and future use cases.
+We then process and standardize the data using Databricks and store the cleansed data in curated and gold layers, often as Delta tables. These business-ready datasets are consumed by reporting, analytics, and healthcare dashboards. The main advantage of a data lake is that it provides a single, scalable repository for all enterprise data while supporting both operational and analytical workloads.
+
+2.Why shouldn't Power BI connect directly to the Raw Layer?
+Raw data is designed for data ingestion and historical retention. It may contain duplicates, schema inconsistencies, sensitive healthcare information, and source-system-specific formats. Exposing raw data directly can lead to inaccurate reporting and governance issues. We therefore transform and standardize the data in Curated and Gold layers, where business rules, data quality validations, and security controls are applied before consumption by Power BI users.
+
+3.Difference between Data Lake and Data Warehouse
+A Data Lake is a centralized repository that stores structured, semi-structured, and unstructured data in its native format. It follows a schema-on-read approach, allowing organizations to store large volumes of raw data first and apply transformations later. In Azure, ADLS Gen2 is commonly used as the enterprise data lake because it provides scalable storage, hierarchical namespace, security, and integration with services like Data Factory, Databricks, and Synapse.
+
+A Data Warehouse is a centralized analytical repository that stores cleaned, integrated, and business-ready data optimized for reporting and decision-making. It typically organizes data into fact and dimension tables to support fast querying and consistent business definitions. In a healthcare environment, a Data Warehouse might contain standardized patient, provider, and claims data that business users access through Power BI dashboards and reports.
+
+| Feature   | Data Lake                                 | Data Warehouse                                  |
+| --------- | ----------------------------------------- | ----------------------------------------------- |
+| Data Type | Structured, Semi-structured, Unstructured | Mostly Structured                               |
+| Schema    | Schema-on-Read                            | Schema-on-Write                                 |
+| Storage   | Raw + Processed Data                      | Curated Business Data                           |
+| Cost      | Lower                                     | Higher                                          |
+| Users     | Data Engineers, Data Scientists           | Business Analysts, Reporting Teams              |
+| Purpose   | Store everything                          | Serve business reporting                        |
+| Examples  | ADLS Gen2, S3                             | Synapse Dedicated SQL Pool, Snowflake, Teradata |
+
+Today, many organizations use a Lakehouse architecture.That's why people sometimes say: Our Gold Delta layer performs the role of a Data Warehouse.
+Data Lake = Storage for engineers and data scientists.
+Data Warehouse = Analytics layer for business users.
+
+4. What is ADLS?
+ADLS (Azure Data Lake Storage) is Microsoft's cloud storage service designed specifically for big data analytics workloads.
+Today, when people say "ADLS," they almost always mean:
+Azure Data Lake Storage Gen2
+ADLS Gen2 is built on top of Azure Blob Storage and adds:
+
+Hierarchical Namespace (HNS)
+Directory structure
+Fine-grained security (ACLs)
+Hadoop/Spark compatibility
+Efficient file operations (rename, move, delete)
+
+5.Why organizations use ADLS
+Centralized Storage: data from different source systems can be stored in adls
+Supports Any Type of Data : structred,semistructured and unstructured
+Data Lake Architecture: schema on read, when orgs want to store all the raw data and only fewer fields are extracted from adls for analytics by business but they still want to store all the history data even when they are not using all data.
+Works with Analytics Tools :ADLS integrates directly with:
+    Azure Data Factory
+    Azure Databricks
+    Azure Synapse Analytics
+    Apache Spark
+Better Than Plain Blob Storage for Analytics cz it provides : Hierarchical Namespace,Efficient Rename and Move,Folder-Level Security
+Scalability: 10 tbs of data or more can be stored and storage is scaled as data increases
+Cost Efficiency : Normal data bases are costlier compared to ADLS
+
+6.ADLS Gen1 vs ADLS Gen2?
+
+7.ADLS Gen2 architecture?
+
+8.What is the difference between object storage and a file system?
+Object storage stores data as independent objects identified by unique names and metadata, without maintaining true directory structures. File systems organize data using directories and files with parent-child relationships. Object storage is highly scalable and cost-effective, while file systems provide efficient directory operations such as rename, move, and hierarchical access control. ADLS Gen2 combines the scalability of object storage with file-system capabilities through the Hierarchical Namespace feature
+
+9.What is Hierarchical Namespace?
+Hierarchical Namespace is a feature of ADLS Gen2 that organizes storage into directories and subdirectories similar to a traditional file system. It allows efficient folder management, folder-level security through ACLs, and faster file operations such as rename and move because these become metadata operations rather than copy-and-delete operations. In our healthcare environment, we use HNS to organize claims, patient, pharmacy, and laboratory data into separate folder structures and apply access controls based on business requirements.
+
+Interview Questions
+Why ADLS instead of SQL Database?
+What problems does ADLS solve?
+Why was Gen2 introduced?
