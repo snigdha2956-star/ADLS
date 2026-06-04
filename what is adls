@@ -50,6 +50,7 @@ Scalability: 10 tbs of data or more can be stored and storage is scaled as data 
 Cost Efficiency : Normal data bases are costlier compared to ADLS
 
 6.ADLS Gen1 vs ADLS Gen2?
+ADLS Gen1 was Microsoft's first-generation data lake service designed specifically for big data analytics. It was a separate storage platform with support for hierarchical directories and analytics workloads. ADLS Gen2 is the successor and is built on top of Azure Blob Storage. By enabling Hierarchical Namespace, Blob Storage gains file-system capabilities such as directories, ACLs, and efficient rename and move operations. ADLS Gen2 provides better integration with the Azure ecosystem, supports both storage and analytics workloads, and is the recommended solution for modern Azure Data Lake implementations.
 
 7.ADLS Gen2 architecture?
 
@@ -61,5 +62,10 @@ Hierarchical Namespace is a feature of ADLS Gen2 that organizes storage into dir
 
 Interview Questions
 Why ADLS instead of SQL Database?
+We use ADLS instead of a SQL database as the primary storage layer because ADLS is designed for storing massive volumes of structured, semi-structured, and unstructured data at a lower cost and higher scalability. It supports schema-on-read, making it suitable for evolving healthcare datasets. SQL databases are optimized for transactional workloads and structured data, whereas ADLS serves as a centralized data lake for analytics, historical retention, machine learning, and large-scale data processing using tools such as Databricks and Spark.
+
 What problems does ADLS solve?
+ADLS solves the problem of storing, securing, and processing massive amounts of diverse enterprise data in a centralized and analytics-optimized platform.
+
 Why was Gen2 introduced?
+ADLS Gen2 was introduced to bring data-lake capabilities such as hierarchical namespaces, ACLs, and analytics optimization directly into Azure Blob Storage, eliminating the need for a separate ADLS Gen1 service.
