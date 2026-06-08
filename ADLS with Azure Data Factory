@@ -1,0 +1,20 @@
+10. ADLS with Azure Data Factory
+
+Must know end-to-end.
+
+Learn
+Linked Service
+Dataset
+Copy Activity
+Incremental Load
+Metadata-driven pipelines
+Real Scenario
+SAP
+ ↓
+ADF
+ ↓
+ADLS Raw
+ ↓
+Databricks
+ ↓
+ADLS Curated
