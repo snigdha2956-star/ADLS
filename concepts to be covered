@@ -117,12 +117,21 @@ Delta
 Pros:
 
 ACID transactions
-Time travel
+A = Atomicity : Either all operations succeed or none of them succeed.
+C = Consistency : Data remains valid before and after the transaction.
+I = Isolation : Multiple users can work simultaneously without interfering with each other.
+D = Durability : Once committed, data is permanently saved.
+
+Time travel : versioning
 Schema evolution
 Interview Questions
 Why Parquet over CSV?
+We prefer Parquet because it is a columnar, compressed, schema-aware format that provides significantly better performance and lower storage costs for analytical workloads compared to CSV.
 Why Delta over Parquet?
+Delta Lake is built on top of Parquet and adds a transaction log called _delta_log. While Parquet provides efficient columnar storage, it does not support ACID transactions, schema enforcement, time travel, or reliable concurrent updates. Delta Lake addresses these limitations by maintaining transactional metadata and version history. In our healthcare platform, we use Delta tables because they provide reliable data processing, support incremental loads through MERGE operations, enable schema evolution, and prevent users from seeing partially written data.
 Which format is best for Databricks?
+
+
 6. Security in ADLS
 
 This is a favorite Azure interview topic.
@@ -152,31 +161,7 @@ Expected answer:
 
 RBAC controls access at Azure resource level.
 ACL controls access at file and folder level.
-7. Authentication Methods
-Learn
-Access Key
 
-Not recommended
-
-SAS Token
-
-Temporary access
-
-Service Principal
-
-Widely used in projects
-
-Managed Identity
-
-Preferred in Azure
-
-Interview Question
-
-How does ADF access ADLS securely?
-
-Expected answer:
-
-Managed Identity + RBAC.
 
 8. Networking Concepts
 
