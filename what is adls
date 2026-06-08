@@ -53,6 +53,54 @@ Cost Efficiency : Normal data bases are costlier compared to ADLS
 ADLS Gen1 was Microsoft's first-generation data lake service designed specifically for big data analytics. It was a separate storage platform with support for hierarchical directories and analytics workloads. ADLS Gen2 is the successor and is built on top of Azure Blob Storage. By enabling Hierarchical Namespace, Blob Storage gains file-system capabilities such as directories, ACLs, and efficient rename and move operations. ADLS Gen2 provides better integration with the Azure ecosystem, supports both storage and analytics workloads, and is the recommended solution for modern Azure Data Lake implementations.
 
 7.ADLS Gen2 architecture?
+Azure Blob Storage
+        +
+Hierarchical Namespace (HNS)
+        +
+Security & Analytics Features
+        =
+ADLS Gen2
+------------------------------
+Layer 1: Storage Account
+Think of it as the boundary for:
+Storage
+Security
+Networking
+Monitoring
+Layer 2: Hierarchical Namespace (HNS)
+This enables:
+Directory operations
+ACLs
+Efficient rename
+Efficient move
+Layer 3: Containers
+Layer 4: Directories
+Layer 5: Files
+Supported formats:
+CSV
+JSON
+Parquet
+Delta
+Avro
+ORC
+PDFs
+Images
+
+Security Architecture:
+This is a major part of ADLS Gen2 architecture.
+Azure AD User
+       |
+       V
+RBAC
+       |
+       V
+Storage Account
+       |
+       V
+ACL
+       |
+       V
+Directory / File
 
 8.What is the difference between object storage and a file system?
 Object storage stores data as independent objects identified by unique names and metadata, without maintaining true directory structures. File systems organize data using directories and files with parent-child relationships. Object storage is highly scalable and cost-effective, while file systems provide efficient directory operations such as rename, move, and hierarchical access control. ADLS Gen2 combines the scalability of object storage with file-system capabilities through the Hierarchical Namespace feature
