@@ -1,0 +1,25 @@
+7. Authentication Methods
+Learn
+Access Key
+
+Not recommended
+
+SAS Token
+
+Temporary access
+
+Service Principal
+
+Widely used in projects
+
+Managed Identity
+
+Preferred in Azure
+
+Interview Question
+
+How does ADF access ADLS securely?
+
+Expected answer:
+
+Managed Identity + RBAC.
