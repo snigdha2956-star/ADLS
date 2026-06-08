@@ -1,0 +1,28 @@
+
+9. Performance Optimization
+
+Very important for 8 years experience.
+
+Learn
+File Size
+
+Avoid:
+
+1 Million files
+each 5 KB
+
+Prefer:
+
+100 files
+each 256 MB
+Partitioning
+
+Example:
+
+/year=2025/month=06/day=01/
+Compression
+Snappy
+Gzip
+Interview Questions
+Small file problem?
+How do you improve Spark performance using ADLS?
