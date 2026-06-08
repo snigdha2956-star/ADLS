@@ -1,0 +1,6 @@
+RBAC and ACLs
+RBAC and ACLs provide layered security in ADLS Gen2. RBAC is configured at the Azure resource level and determines whether a user or service principal can access the storage account. ACLs are configured at the directory and file level and provide fine-grained authorization within the data lake. In our healthcare platform, RBAC is used to grant storage-level access to engineering, analytics, and business teams, while ACLs restrict access to specific folders such as claims, pharmacy, or patient data. A user typically requires both appropriate RBAC permissions and ACL permissions to access data.
+Common RBAC Roles:
+Storage Blob Data Reader
+Storage Blob Data Contributor
+Storage Blob Data Owner
