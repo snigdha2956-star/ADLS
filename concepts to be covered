@@ -163,19 +163,7 @@ RBAC controls access at Azure resource level.
 ACL controls access at file and folder level.
 
 
-8. Networking Concepts
 
-Senior-level interviews often go here.
-
-Learn
-Public Endpoint
-Private Endpoint
-Firewall Rules
-VNet Integration
-Trusted Microsoft Services
-Interview Questions
-How do you secure ADLS from internet access?
-What is a Private Endpoint?
 9. Performance Optimization
 
 Very important for 8 years experience.
