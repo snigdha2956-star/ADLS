@@ -1,0 +1,22 @@
+11. ADLS with Databricks
+
+Very frequently asked.
+
+Learn
+
+Mounting ADLS
+
+Access using:
+
+abfss://container@storageaccount.dfs.core.windows.net
+
+Reading Parquet
+
+df = spark.read.parquet(path)
+
+Writing Delta
+
+df.write.format("delta")
+Interview Questions
+How do Databricks and ADLS integrate?
+What is ABFSS?
