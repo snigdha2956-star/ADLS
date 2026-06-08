@@ -164,26 +164,7 @@ ACL controls access at file and folder level.
 
 
 
-10. ADLS with Azure Data Factory
 
-Must know end-to-end.
-
-Learn
-Linked Service
-Dataset
-Copy Activity
-Incremental Load
-Metadata-driven pipelines
-Real Scenario
-SAP
- ↓
-ADF
- ↓
-ADLS Raw
- ↓
-Databricks
- ↓
-ADLS Curated
 11. ADLS with Databricks
 
 Very frequently asked.
