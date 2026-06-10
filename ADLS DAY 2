@@ -11,3 +11,22 @@ Delta Lake
 ADLS is where data is stored.
 
 Delta Lake is how data is managed inside that storage.
+
+Delta Lake itself is not a storage service. Delta tables are typically stored on ADLS Gen2. Delta Lake provides the transaction layer and table-management capabilities on top of the underlying storage.
+
+Data layers :
+Raw,Curated,Gold 
+or
+Bronze,Silver,Gold
+
+silver:
+
+But now:
+
+Duplicates removed
+Nulls handled
+Data types fixed
+Standardized formats
+Business validations applied
+
+Gold is designed around business questions, not transactions.
