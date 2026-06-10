@@ -1,0 +1,13 @@
+what is delta lake ?
+Delta Lake is an open-source storage layer built on top of Parquet files that adds reliability features such as ACID transactions, schema enforcement, schema evolution, time travel, and support for concurrent reads and writes.
+
+Parquet Files
+      +
+Transaction Log
+(_delta_log)
+      =
+Delta Lake
+
+ADLS is where data is stored.
+
+Delta Lake is how data is managed inside that storage.
